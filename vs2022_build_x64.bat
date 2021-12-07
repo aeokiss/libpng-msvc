@@ -12,7 +12,7 @@ nmake -f ..\res\Makefile.msvc NO_NLS=1 MFLAGS=-MTd DEBUG=1
 
 cd ..
 
-@set OutputLibDir=output_vs2022\x64\Debug
+@set OutputLibDir=build\vs2022\x64\Debug
 
 rmdir /S /Q %OutputLibDir%
 mkdir %OutputLibDir%
@@ -35,7 +35,7 @@ nmake -f ..\res\Makefile.msvc NO_NLS=1 MFLAGS=-MT
 
 cd ..
 
-@set OutputLibDir=output_vs2022\x64\Release
+@set OutputLibDir=build\vs2022\x64\Release
 
 rmdir /S /Q %OutputLibDir%
 mkdir %OutputLibDir%
