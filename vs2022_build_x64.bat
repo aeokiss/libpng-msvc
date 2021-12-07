@@ -27,6 +27,7 @@ copy libpng\pngpriv.h %OutputLibDir%
 copy libpng\pngstruct.h %OutputLibDir%
 copy libpng\pngtest.exe %OutputLibDir%
 copy libpng\*.pdb %OutputLibDir%
+copy libpng\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
 
 cd libpng
 
@@ -50,6 +51,7 @@ copy libpng\pngpriv.h %OutputLibDir%
 copy libpng\pngstruct.h %OutputLibDir%
 copy libpng\pngtest.exe %OutputLibDir%
 copy libpng\*.pdb %OutputLibDir%
+copy libpng\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
 
 del /Q res\pnglibconf.h
 
