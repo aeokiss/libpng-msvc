@@ -2,13 +2,16 @@
 
 @call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 
-del /Q res\pnglibconf.h
-copy libpng\scripts\pnglibconf.h.prebuilt res\pnglibconf.h
+@set SrcDir=libpng
+@set ResDir=res
 
-cd libpng
+del /Q %ResDir%\pnglibconf.h
+copy %SrcDir%\scripts\pnglibconf.h.prebuilt %ResDir%\pnglibconf.h
 
-nmake -f ..\res\Makefile.msvc clean
-nmake -f ..\res\Makefile.msvc NO_NLS=1 MFLAGS=-MTd DEBUG=1
+cd %SrcDir%
+
+nmake -f ..\%ResDir%\Makefile.msvc clean
+nmake -f ..\%ResDir%\Makefile.msvc NO_NLS=1 MFLAGS=-MTd DEBUG=1
 
 cd ..
 
@@ -17,22 +20,22 @@ cd ..
 rmdir /S /Q %OutputLibDir%
 mkdir %OutputLibDir%
 
-copy libpng\libpng.lib %OutputLibDir%
-copy libpng\png.h %OutputLibDir%
-copy libpng\pngconf.h %OutputLibDir%
-copy libpng\pngdebug.h %OutputLibDir%
-copy libpng\pnginfo.h %OutputLibDir%
-copy libpng\pnglibconf.h %OutputLibDir%
-copy libpng\pngpriv.h %OutputLibDir%
-copy libpng\pngstruct.h %OutputLibDir%
-copy libpng\pngtest.exe %OutputLibDir%
-copy libpng\*.pdb %OutputLibDir%
-copy libpng\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
+copy %SrcDir%\libpng.lib %OutputLibDir%
+copy %SrcDir%\png.h %OutputLibDir%
+copy %SrcDir%\pngconf.h %OutputLibDir%
+copy %SrcDir%\pngdebug.h %OutputLibDir%
+copy %SrcDir%\pnginfo.h %OutputLibDir%
+copy %SrcDir%\pnglibconf.h %OutputLibDir%
+copy %SrcDir%\pngpriv.h %OutputLibDir%
+copy %SrcDir%\pngstruct.h %OutputLibDir%
+copy %SrcDir%\pngtest.exe %OutputLibDir%
+copy %SrcDir%\*.pdb %OutputLibDir%
+copy %SrcDir%\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
 
-cd libpng
+cd %SrcDir%
 
-nmake -f ..\res\Makefile.msvc clean
-nmake -f ..\res\Makefile.msvc NO_NLS=1 MFLAGS=-MT
+nmake -f ..\%ResDir%\Makefile.msvc clean
+nmake -f ..\%ResDir%\Makefile.msvc NO_NLS=1 MFLAGS=-MT
 
 cd ..
 
@@ -41,18 +44,18 @@ cd ..
 rmdir /S /Q %OutputLibDir%
 mkdir %OutputLibDir%
 
-copy libpng\libpng.lib %OutputLibDir%
-copy libpng\png.h %OutputLibDir%
-copy libpng\pngconf.h %OutputLibDir%
-copy libpng\pngdebug.h %OutputLibDir%
-copy libpng\pnginfo.h %OutputLibDir%
-copy libpng\pnglibconf.h %OutputLibDir%
-copy libpng\pngpriv.h %OutputLibDir%
-copy libpng\pngstruct.h %OutputLibDir%
-copy libpng\pngtest.exe %OutputLibDir%
-copy libpng\*.pdb %OutputLibDir%
-copy libpng\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
+copy %SrcDir%\libpng.lib %OutputLibDir%
+copy %SrcDir%\png.h %OutputLibDir%
+copy %SrcDir%\pngconf.h %OutputLibDir%
+copy %SrcDir%\pngdebug.h %OutputLibDir%
+copy %SrcDir%\pnginfo.h %OutputLibDir%
+copy %SrcDir%\pnglibconf.h %OutputLibDir%
+copy %SrcDir%\pngpriv.h %OutputLibDir%
+copy %SrcDir%\pngstruct.h %OutputLibDir%
+copy %SrcDir%\pngtest.exe %OutputLibDir%
+copy %SrcDir%\*.pdb %OutputLibDir%
+copy %SrcDir%\scripts\pnglibconf.h.prebuilt %OutputLibDir%\pnglibconf.h
 
-del /Q res\pnglibconf.h
+del /Q %ResDir%\pnglibconf.h
 
 pause
